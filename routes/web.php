@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+/*---------------------------------------------------BACKEND---------------------------------------------------*/
+
+Route::get('admin/login', [AuthController::class, 'index'])->name('login');
+Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+/*---------------------------------------------------ADMIN---------------------------------------------------*/
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    });
+});

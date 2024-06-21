@@ -2,7 +2,7 @@
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="#" class="logo">
+            <a href="{{ route('admin.dashboard') }}" class="logo">
                 <img src="img-logo/VT_luxury.png" alt="navbar brand" class="navbar-brand"
                     height="60" />
                 <h4 class="text-light ms-2 mt-2">VT Luxury</h4>
@@ -25,7 +25,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item active">
-                    <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                    <a href="{{ route('admin.dashboard') }}" data-bs-toggle="collapse" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Trang chủ</p>
                     </a>
